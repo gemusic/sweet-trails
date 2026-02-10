@@ -1,3 +1,4 @@
+// src/pages/Events.tsx
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -23,12 +24,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-import bulkOrdersImage from "@/assets/events/bulk-orders.jpg";
-import eventGallery1 from "@/assets/events/gallery1.jpg";
-import eventGallery2 from "@/assets/events/gallery2.jpg";
-import eventGallery3 from "@/assets/events/gallery3.jpg";
-import eventGallery4 from "@/assets/events/gallery4.jpg";
-import eventGallery5 from "@/assets/events/gallery5.jpg";
+// Importez seulement l'image qui existe
+import { bulkOrdersImage } from "@/assets/events";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,12 +58,28 @@ const processSteps = [
   },
 ];
 
+// Utilisez des URLs d'images de placeholder pour l'instant
 const galleryImages = [
-  { src: eventGallery1, alt: "Corporate event catering" },
-  { src: eventGallery2, alt: "Wedding celebration" },
-  { src: eventGallery3, alt: "Bulk orders preparation" },
-  { src: eventGallery4, alt: "Event setup" },
-  { src: eventGallery5, alt: "Happy guests" },
+  { 
+    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop&q=80", 
+    alt: "Corporate event catering" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop&q=80", 
+    alt: "Wedding celebration" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop&q=80", 
+    alt: "Bulk orders preparation" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&auto=format&fit=crop&q=80", 
+    alt: "Event setup" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&auto=format&fit=crop&q=80", 
+    alt: "Happy guests" 
+  },
 ];
 
 export const EventsAndBulkOrdersPage = () => {
