@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "@/contexts/CartContext";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { MobileCartBar } from "@/components/cart/MobileCartBar";
+import { Layout } from "@/components/Layout"; // <-- IMPORTANT
 import Index from "./pages/Index";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
@@ -24,13 +25,14 @@ const App = () => (
         <CartDrawer />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/packages" element={<Menu />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/packages" element={<Menu />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
           <MobileCartBar />
